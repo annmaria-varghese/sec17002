@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>N Numbers</title>
+</head>
+
+<body>
+    <h1>Sum of n Numbers</h1>
+    <label for="num">Enter the terms:</label>
+    <input type="number" id="num" placeholder="Enter number">
+    <button onclick="calculateSum()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function calculateSum() {
+            var n = parseInt(document.getElementById("num").value);
+            var answer = document.getElementById("answer");
+
+            if (isNaN(n) || n < 1) {
+                answer.innerHTML = "Enter a valid positive integer.";
+                return;
+            }
+
+            var sum = 0;
+            for (var i = 1; i <= n; i++) {
+                sum += i;
+            }
+
+            answer.innerHTML = "The sum of the first " + n + " numbers is: " + sum;
+        }
+    </script>
+</body>
+
+</html>
